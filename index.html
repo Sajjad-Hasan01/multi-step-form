@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <title>Frontend Mentor | Multi-step form</title>
+  <script src="./main.js" defer></script>
+</head>
+<body>
+
+  <main>
+    <!-- Sidebar start -->
+    <nav class="form-steps">
+      <picture>
+        <source media="(min-width:768px)" srcset="./assets/images/bg-sidebar-desktop.svg">
+        <img src="./assets/images/bg-sidebar-mobile.svg" alt="" srcset="">
+      </picture>
+      <ol>
+        <li class="form-step" data-number="1"><span class="mobile-hidden"><span>Step 1</span> Your info</span></li>
+        <li class="form-step" data-number="2"><span class="mobile-hidden"><span>Step 2</span> Select plan</span></li>
+        <li class="form-step" data-number="3"><span class="mobile-hidden"><span>Step 3</span> Add-ons</span></li>
+        <li class="form-step" data-number="4"><span class="mobile-hidden"><span>Step 4</span> Summary</span></li>
+      </ol>
+    </nav>
+    <!-- Sidebar end -->
+
+    
+    <form id="signUpForm" action="" class="hidden-ite">
+      <input type="checkbox" name="plan-period" id="plan-period">
+      
+      <!-- Step 1 start -->
+      <div class="step-container">
+        <h2 class="step-title">Personal info</h2>
+        <p class="step-subtitle">Please provide your name, email address, and phone number.</p>
+        <label for="namefield" class="input-lbl">Name <span class="req-msg hidden-item">This field is required</span></label>
+        <input type="text" class="input-field" name="name" id="namefield" placeholder="e.g. Stephen King" >
+        <label for="emailfield" class="input-lbl">Email Address <span class="req-msg hidden-item">This field is required</span></label>
+        <input type="email" class="input-field" name="email" id="emailfield" placeholder="e.g. Stephen King" >
+        <label for="phonefield" class="input-lbl">Phone Number <span class="req-msg hidden-item">This field is required</span></label>
+        <input type="tel" class="input-field" name="phone" id="phonefield" placeholder="e.g. +1 234 567 890" >
+      </div>
+      <!-- Step 1 end -->
+      
+      <!-- Step 2 start -->
+      <div class="step-container">
+        <h2 class="step-title">Select your plan</h2>
+        <p class="step-subtitle">You have the option of monthly or yearly billing.</p>
+        <div class="card-container">
+          <label class="card plan-card">
+            <img src="./assets/images/icon-arcade.svg" class="plan-card--img">
+            <div class="card-content">
+              <h4 class="card-title">Arcade</h4>
+              <p class="card-description">
+                $<span class="card-price" data-price="9">/</span>
+                <strong>2 months free</strong>
+              </p>
+              <input type="radio" name="plan-type" value="Arcade" data-price="9">
+            </div>
+          </label>
+          
+          <label class="card plan-card">
+            <img src="./assets/images/icon-advanced.svg" class="plan-card--img">
+            <div class="card-content">
+              <h4 class="card-title">Advanced</h4>
+              <p class="card-description">
+                $<span class="card-price" data-price="12">/</span>
+                <strong>2 months free</strong>
+              </p>
+              <input type="radio" name="plan-type" value="Advanced" data-price="12">
+            </div>
+          </label>
+          
+          <label class="card plan-card">
+            <img src="./assets/images/icon-pro.svg" class="plan-card--img">
+            <div class="card-content">
+              <h4 class="card-title">Pro</h4>
+              <p class="card-description">
+                $<span class="card-price" data-price="15">/</span>
+                <strong>2 months free</strong>
+              </p>
+              <input type="radio" name="plan-type" value="Pro" data-price="15">
+            </div>
+          </label>
+        </div>
+    
+        <label for="plan-period" class="form-row checkbox">
+          Monthly <span class="toggle"></span><span>Yearly</span>
+        </label>
+      </div>
+      <!-- Step 2 end -->
+    
+      <!-- Step 3 start -->
+      <div class="step-container">
+        <h2 class="step-title">Pick add-ons</h2>
+        <p class="step-subtitle">Add-ons help enhance your gaming experience.</p>
+    
+        <label class="card service-card">
+          <input type="checkbox" name="service-card" value="Online service" data-price="1">
+          <span class="checkToggle"></span>
+          <div class="card-content">
+            <h4 class="card-title">Online service</h4>
+            <p class="card-description">Access to multiplayer games</p>
+          </div>
+          <span>+$<span class="card-price" data-price="1">/</span></span>
+        </label>
+    
+        <label class="card service-card">
+          <input type="checkbox" name="service-card" value="Larger storage" data-price="2">
+          <span class="checkToggle"></span>
+          <div class="card-content">
+            <h4 class="card-title">Larger storage</h4>
+            <p class="card-description">Extra 1TB of cloud save</p>
+          </div>
+          <span>+$<span class="card-price" data-price="2">/</span></span>
+        </label>
+    
+        <label class="card service-card">
+          <input type="checkbox" name="service-card" value="Customizable Profile" data-price="2">
+          <span class="checkToggle"></span>
+          <div class="card-content">
+            <h4 class="card-title">Customizable Profile</h4>
+            <p class="card-description">Custom theme on your profile</p>
+          </div>
+          <span>+$<span class="card-price" data-price="2">/</span></span>
+        </label>
+      </div>
+      <!-- Step 3 end -->
+    
+      <!-- Step 4 start -->
+      <div class="step-container">
+        <h2 class="step-title">Finishing up</h2>
+        <p class="step-subtitle">Double-check everything looks OK before confirming.</p>
+    
+        <ul class="summary-container"></ul>
+        <p class="summary-price">Total (per<span class="plan-period" id="summaryPeriod"> </span>)<strong id="totalCost"></strong></p>
+      </div>
+      <!-- Step 4 end -->
+      
+      <div class="form-btns">
+        <button id="backBtn" type="button" class="btn secondary">Go Back</button>
+        <button id="nextBtn" type="button" class="btn primary">Next Step</button>
+        <button id="confirmBtn" type="button" class="btn purple">Confirm</button>
+      </div>
+    </form>
+    
+    <!-- Step 5 start -->
+    <div class="step-container" id="backMsg">
+      <img src="./assets/images/icon-thank-you.svg" alt="" srcset="">
+      <h2>Thank you!</h2>
+      <p class="step-subtitle">Thanks for confirming your subscription! We hope you have fun
+        using our platform. If you ever need support, please feel free
+        to email us at support@loremgaming.com.</p>
+    </div>
+    <!-- Step 5 end -->
+  </main>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://linktr.ee/sajjad_hasan" target="_blank">Sajjad Hasan</a>.
+  </footer>
+</body>
+</html>

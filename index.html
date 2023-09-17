@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <title>Frontend Mentor | Multi-step form</title>
+  <script src="./main.js" defer></script>
+</head>
+<body>
+  <main>
+    <!-- Sidebar start -->
+    <header class="form-steps">
+      <picture>
+        <source media="(min-width:768px)" srcset="./assets/images/bg-sidebar-desktop.svg">
+        <img src="./assets/images/bg-sidebar-mobile.svg" alt="" srcset="">
+      </picture>
+      <ol>
+        <li class="form-step" data-number="1"><span class="mobile-hidden"><span>Step 1</span> Account info</span></li>
+        <li class="form-step" data-number="2"><span class="mobile-hidden"><span>Step 2</span> Profile info</span></li>
+        <li class="form-step" data-number="3"><span class="mobile-hidden"><span>Step 3</span> Contacts</span></li>
+      </ol>
+    </header>
+    <!-- Sidebar end -->
+
+    <form id="signUpForm" action="">
+      <!-- Step 1 start -->
+      <div class="step-container">
+        <h2 class="step-title">Account info</h2>
+        <p class="step-subtitle">Please provide your email address, username and a new password</p>
+
+        <div class="form-field" id="emailField">
+          <label for="email" >Email</label>
+          <input type="email" class="input-field" name="email" id="email" placeholder="user@domain.com" spellcheck="false">
+          <span class="error-msg">please enter a valid email</span>
+        </div>
+
+        <div class="form-field" id="usernameField">
+          <label for="username">Username</label>
+          <input type="text" class="input-field" name="username" id="username" placeholder="username" spellcheck="false">
+          <span class="error-msg">username is already exist, write another one</span>
+        </div>
+
+        <div class="form-field" id="passwordField">
+          <label for="password" >Create Password</label>
+          <input type="password" class="input-field" name="password" id="password" placeholder="new password" >
+          <span class="error-msg">please enter atleast 8 charatcer with number, symbol, small and capital letter</span>
+        </div>
+
+        <div class="form-field" id="confirmPasswordField">
+          <label for="confirmPassword" >Confirm Password</label>
+          <input type="password" class="input-field" name="confirmPassword" id="confirmPassword" placeholder="rewrite password" >
+          <span class="error-msg">Password doesn't match</span>
+        </div>
+      </div>
+      <!-- Step 1 end -->
+      
+      <!-- Step 2 start -->
+      <div class="step-container">
+        <h2 class="step-title">Profile info</h2>
+        <p class="step-subtitle">You can add personal information</p>
+        
+        <div class="form-field" id="fullNameField">
+          <label for="fullName">Full Name</label>
+          <input type="text" class="input-field" name="name" id="fullName" placeholder="Adam M. Al-Arabi">
+          <span class="error-msg">Full name don't contain number or symbol</span>
+        </div>
+        
+        <div class="form-field" id="fullNameField">
+          <label for="fullName">About yourself (optional)</label>
+          <textarea class="input-field" name="bio" id="bio" placeholder="Type here.."></textarea>
+          <span class="error-msg">Full name don't contain number or symbol</span>
+        </div>
+
+        <div class="form-field">
+          <label for="fullName">Profile Photo (optional)</label>
+          <input type="file" name="profilePhoto" id="profilePhoto" class="input-field file-input" data-name="">
+          <span class="error-msg">Full name don't contain number or symbol</span>
+        </div>
+      </div>
+      <!-- Step 2 end -->
+    
+      <!-- Step 3 start -->
+      <div class="step-container">
+        <h2 class="step-title">Contacts</h2>
+        <p class="step-subtitle">You can add your portfolio website or social media if you want</p>
+    
+        <div class="form-field">
+          <label>Link (optional)</label>
+          <button class="add-link-btn" id="addLinkBtn">add link <i class="ri-add-fill"></i></button>
+          <span class="error-msg">Full name don't contain number or symbol</span>
+        </div>
+      </div>
+      <!-- Step 3 end -->
+      
+      <div class="form-btns">
+        <button id="backBtn" type="button" class="btn secondary">Go Back</button>
+        <button id="nextBtn" type="button" class="btn primary">Next Step</button>
+        <button id="confirmBtn" type="button" class="btn purple">Registration</button>
+      </div>
+    </form>
+    
+    <!-- Step 4 start -->
+    <div class="step-container" id="backMsg">
+      <div>
+        <img src="./assets/images/icon-thank-you.svg">
+        <h2 class="step-title">Registration done</h2>
+        <p class="step-subtitle">Thanks for registre! We hope you have fun
+          using our platform. If you ever need support, please feel free
+          to email us at <strong>contact@sajjad.design</strong></p>
+      </div>
+    </div>
+    <!-- Step 4 end -->
+  </main>
+
+  <script src="./contactLink.js"></script>
+  <script src="./photoName.js"></script>
+</body>
+</html>
